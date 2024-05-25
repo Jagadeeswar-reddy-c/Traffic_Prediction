@@ -5,8 +5,8 @@ from timeit import default_timer as timer
 
 
 def file():
-  conn = pd.read_csv("edgeId_coordinates_connectedEdges.csv")
-  data = pd.read_csv("2022-11-30.csv")
+  conn = pd.read_csv("connected_data.csv")
+  data = pd.read_csv("data.csv")
 
   edgeids_conn = conn['edgeId']
   conn_edges = conn['connected_edges']
@@ -41,6 +41,7 @@ def file():
   return edgeids_con,fin
 
 start = timer()
+print("Time start:",start)
 edgeids_con,fin = file()
 print("with CPU:", timer()-start)
 new = "file.csv"

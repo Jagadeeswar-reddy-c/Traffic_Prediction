@@ -17,8 +17,8 @@ from sklearn.metrics import mean_squared_error
 
 def finmethod(date_time):
   file = pd.read_csv("file.csv")
-  conn = pd.read_csv("edgeId_coordinates_connectedEdges.csv")
-  data = pd.read_csv("2022-11-30.csv")
+  conn = pd.read_csv("Connected_data.csv")
+  data = pd.read_csv("data.csv")
   road_data = file['edgeId']
   col_dat = list(file.columns)
   col_dat = col_dat[1:]
@@ -58,7 +58,7 @@ def finmethod(date_time):
       else:
         lst.append(road_input_dat[i])
         fin_list.append(lst)
-    print(type(road_data[_]))
+    # print(type(road_data[_]))
     Data = np.array(fin_list)
     X=Y=[]
     X = Data[:,0:len(road_link)]
