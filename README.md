@@ -11,9 +11,9 @@
 
 
 > 1. Reading Data:
-  * The code reads two CSV files: `edgeId_coordinates_connectedEdges.csv` and `2022-11-30.csv`.
-  * `edgeId_coordinates_connectedEdges.csv` contains `edgeId` and `connected_edges`, which indicate the connections between road segments.
-  * `2022-11-30.csv` contains traffic data, including `edgeId` and various traffic-related metrics.
+  * The code reads two CSV files: `connected_data.csv` and `data.csv`.
+  * `connected_data.csv` contains `edgeId` and `connected_edges`, which indicate the connections between road segments.
+  * `data.csv` contains traffic data, including `edgeId` and various traffic-related metrics.
 
 > 2. Creating the Connection Matrix:
   * The code iterates through the `edgeId` list, creating a connection matrix where each cell indicates whether two road segments are connected (`1`), the same (`X`), or not connected (`-`).
@@ -23,7 +23,7 @@
 - The second part of the code, implemented in the finmethod() function, uses the connection matrix and historical data to predict traffic speeds on various road segments and visualize the results on a map.
 
 > 1. Reading Data:
-  - The code reads the `file.csv`, `edgeId_coordinates_connectedEdges.csv`, and `2022-11-30.csv` files again.
+  - The code reads the `file.csv`, `connected_data.csv`, and `data.csv` files again.
   - It extracts `edgeId` and `connected_edges` information to understand the relationships between road segments.
 
 > 2. Identifying Connected Road Segments:
@@ -54,6 +54,8 @@
    
 <h1>Code Execution</h1>
 
+[Data Acquisition Link](#)
+
 ## Version
 ```
 Python >= 3.7.0 or anaconda
@@ -65,6 +67,19 @@ Installation and Cloning Project:
 git clone https://github.com/Jagadeeswar-reddy-c/Traffic_Prediction.git
 cd Traffic_Prediction
 pip install -r requirements.txt
+```
+
+> Instructiona
+To execute the complete solution, follow these steps:
+1. Run `road_matric_file.py`:
+   * This script prepares the data and creates the connection matrix, which is saved in a CSV file.
+```
+python road_matric_file.py
+```
+2. Run `Road_Traffic_Prediction.py`:
+   * This script uses the connection matrix and historical data to predict traffic speeds and visualize the results.
+```
+python Road_Traffic_Prediction.py
 ```
 
 
